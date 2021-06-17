@@ -1,0 +1,203 @@
+- task: >
+    {{ player }} a {{ player }} musejí dorovnat svoje drinky.
+    Hráč, který má více ve sklenici, musí dopít na úroveň druhého hráče.
+- task: >
+    {{ player }}, napodob jiného hráče.
+    První, kdo uhádne, o koho jde, rozdává mezi ostatní {{ number:1..4 }} loky!
+- task: >
+    Dej si {{ number:2 }} loky, jestli už jsi někdy naštval někoho z ostatních hráčů.
+- task: >
+    Jeden za druhým jmenujte filmy se zlými mimozemšťany.
+    První, kdo neví, pije {{ number:2..4 }} loky. {{ player }} začíná!
+- task: >
+    Jmenujte jeden po druhém synonyma ke slovu "prsa".
+    První, kdo zopakuje nebo neví, pije {{ number:2..3 }}krát.
+    {{ player }}, začínáš!
+- task: >
+    "Žil bys raději ve světě bez manželství nebo ve světě bez rozvodů?"
+    Všichni hlasujte najednou, prohraná skupina pije {{ number:2..3 }}krát.
+- task: >
+    "Kolik stály tvoje boty?"
+    Každý řekněte částku a pak klikněte na tlačítko pokračovat.
+    {{ player }}, začínáš!
+  result:
+    - Všichni s botami přes 1000 Kč pijou {{ number:2..4 }} loky!
+    - Všichni, kteří neznají cenu svých bot, pijou {{ number:2..4 }} loky!
+- task: >
+    {{ player }}, jmenuj nějaký doplněk (hodinky, náhrdelník, náušnice, ...).
+    Každý, kdo má tento doplněk na sobě si musí dát {{ number:2..4 }} loky.
+- task: >
+    {{ player }}, řekni písmeno.
+    Každý k němu postupně přidává další písmena, dokud nedokončíte slovo.
+    Osoba, která dokončí slovo pije {{ number:4..6 }} loků.
+- task: >
+    {{ player }}, rozdej {{ number:2..4 }} loky hráčům, kteří jsou menší než ty.
+    Pokud to není možné, vypij je, skrčku!
+- task: >
+    Každý, jehož věk je liché číslo, pošle někomu fotku, nebo si dá {{ number:5..7 }} loků!
+- task: >
+    Obdržel by jsi raději 20 000 000 Kč teď hned, nebo měl svojí vysněnou práci za 100 000 Kč měsíčně?
+    Všichni hlasujte najednou, prohraní pijou {{ number:2..4 }} loky.
+- task: >
+    Jmenujte postupně písničky od Kabátů.
+    Kdo neví, nebo zopakuje písničku, pije {{ number:3..4 }} loky.
+    {{ player }}, začínáš!
+- task: >
+    Každý, kdo má výstřih, si dá {{ number:5..7 }} loků.
+- task: >
+    {{ player }} musí šišlat, dokud hra neřekne, že může přestat.
+    Když poruší, tak pije.
+  callback: >
+    Šišlal může přestat šišlat.
+  delay: 10..20
+- task: >
+    Pokud máš díry v ponožkách, dej si {{ number:2..4 }} loky.
+    A taky zvaž, že by sis koupil nové ponožky.
+- task: >
+    Černá nebo bílá?
+    Každý si vybere svou stranu a potom klikněte na tlačítko pokračovat.
+  result:
+    - Černá. Rasisti pijou {{ number:2..4 }} loky!
+    - Bílá. Pijete {{ number:2..3 }} loky, prostě proto.
+- task: >
+    {{ player }} a {{ player }} musejí doexovat svoje drinky.
+- task: >
+    Všichni po jednom řekněte nějakou věc, kterou jste někdy dělali.
+    Každý, kdo to nikdy nedělal, se musí napít.
+    {{ player }}, začínáš.
+- task: >
+    {{ player }}, rozdej {{ number:2..4 }} loky někomu, kdo už byl od začátku večera na záchodě.
+- task: >
+    Dopij svůj drink, jestli jsi blond!
+- task: >
+    {{ player }}, pokud se ti podaří nabídnout někomu svůj drink do konce hry a on se napije, musí vyexovat svůj drink.
+- task: >
+    {{ player }}, rozhodni: kdo myslíš, že by se MÉNĚ ztrapnil při karaoke večeru, {{ player }} nebo {{ player }}?
+  result: >
+    - Hvězda večera rozdává mezi ostatní {{ number:2..4 }} loky!
+- task: >
+    {{ player }}, tajně mysli na jednu věc, kterou budeš dělat zítra.
+    Hráči dokola hádají a kdo věc uhádne, rozdává {{ number:3..4 }} loky.
+    {{ player }} začíná.
+- task: >
+    {{ player }}, jmenuj přednosti {{ player }}.
+  result: >
+    - Rozdej tolik loků, kolik jsi vyjmenoval předností.
+- task: >
+    Byli byste raději slavná nebo nejlepší kamarád někoho slavného?
+    Všichni hlasujte najednou, prohraní pijou {{ number:2..4 }} loky.
+- task: >
+    {{ player }}, pravda, odvaha nebo exnout drink? {{ player }}, dáváš otázku nebo vybíráš úkol.
+- task: >
+    Chtěli byste raději mít talent kohokoliv, koho potkáte, nebo umět telekinezi?
+    Hlasujte všichni najednou, prohraní pijou {{ number:2..4 }} loky.
+- task: >
+    Jeden po druhém hláskujte příjmení hráče po pravici.
+    Komu se to nepovede, pije {{ number:4..6 }} krát (musíte dokončit kolo).
+    {{ player }}, začínáš!
+- task: >
+    {{ player }}, jestl ses maloval/a předtím, než jsi sem šel/šla, rozdej {{ number:2..3 }} loky.
+    Pokud ne, vypij je!
+- task: >
+    Hráč s mincí nejvyšší hodnoty se může rozhodnout, jestli jí někomu dá a ten si dá {{ number:5..8 }} loků, nebo jestli si jí nechá a sám vypije {{ number:5..8 }} loků.
+- task: >
+    Ti, kteří nemají Instagram, pijou {{ number:3..5 }} krát.
+- task: >
+    Ti, kteří nehrají počítačové hry, pijou {{ number:3..5 }} krát.
+- task: >
+    {{ player }} je FLASH.
+    Pokaždé, když se mu dolije drink, má pouze 2 minuty, aby ho dopil.
+    Do odvolání!
+  callback:
+    FLASH už může zase pít normálně.
+  delay: 5..25
+- task: >
+    Jeden po druhém jmenujte dokola "pokerové kombinace".
+    První, kdo neví, pije {{ number:2..4 }} loky.
+    {{ player }} začíná. 
+- task: >
+    "MUSIC JAM"
+    {{ player }} začne zpívat písničku.
+    V jednu chvíli přestane a ukáže na hráče, který musí navázat a zpívat dál.
+    Hráč, který potom zpívá, opět v jednu chvíli přestane a ukáže na dalšího hráče.
+    Takto pokračujte dokud se někdo nesplete.
+    Kdo se splete, pije {{ number:3..6 }} krát.
+- task: >
+    {{ player }}, můžeš rozdat tolik loků, kolik dokážeš vyjmenovat expřítelů/expřítelkyň {{ player }}.
+    Když se spleteš, piješ {{ number:3..4 }} loky.
+- task: >
+    {{ player }}, můžeš rozdat tolik loků, kolik uděláš najednou precizních kliků.
+- task: >
+    {{ player }}, můžeš rozdat tolik loků, kolik uděláš najednou desítek precizních dřepů.
+- task: >
+    {{ player }}, napij se tolikrát, kolik je hráčů ve hře.
+- task: >
+    Srovnejte drinky!
+    Všichni musí dopít na úroveň {{ player }}.
+    Kdo má méně, musí svůj drink vyexovat.
+- task: >
+    První, kdo vytáhne kondom, rozdává {{ number:3..6 }} loků.
+- task: >
+    První, kdo ukáže svůj Tinder profil, rozdává {{ number:3..6 }} loků.
+- task: >
+    První, kdo vyexuje svůj drink, rozdává {{ number:5..8 }} loků.
+- task: >
+    Na cestovatele!
+    Napij se {{ number:2..4 }} krát, pokud jsi někdy spal s cizincem nebo cizinkou.
+- task: >
+    {{ player }}, rozhodni, kdo je horší hráč video her.
+    {{ player }} nebo {{ player }}?
+    Nešika pije {{ number:2..5 }} loky.
+- task: >
+    Jeden po druhém jmenujte dokola postavy z Knihy džunglí.
+    Kdo neví, pije {{ number:2..4 }} loky.
+- task: >
+    Napij se tolikrát, s kolika hráči bys chtěl něco mít.
+- task: >
+    {{ player }}, pokud zvládneš vyjmenovat 3 písničky, které byly hitem ve Španělsku, rozdáváš {{ number:3..4 }} loky.
+    Pokud ne, musíš je vypít.
+- task: >
+    Všichni dopijte svoje drinky.
+- task: >
+    {{ player }}, řekni svůj nejtrapnější zážitek.
+    Pokud ostatní uznají, že to bylo opravdu trapné, rozdáváš {{ number:3..5 }} loky.
+    Pokud ne, piješ ty.
+- task: >
+    {{ player }}, rozdej tolik loků, kolik přiznáš svých slabostí. 
+- task: >
+    {{ player }} a {{ player }} každý rozdá {{ number }} loků, pokud si dají pusu.
+    Pokud ne, pijí oni.
+- task: >
+    {{ player }} může rozdat {{ number:2..4 }} loky, pokud poví, jaký sexuální akt udělal, ale už nikdy neudělá?
+- task: >
+    První kdo někomu pošle zprávu "MILUJI TĚ" rozdává {{ number:3..4 }} loky.  
+- task: >
+    Pokud jsi měl sex s někým z hráčů, dej si {{ number::2..4 }} loky.
+- task: >
+    {{ player }}, rozdej {{ number:2..3 }} loky hráčům, kterým řekneš jejich největší přednost.
+- task: >
+    Každý, kdo se kouká na porno, si dá {{ number::3..4 }} loky.
+  result: >
+    - Kdo se nenapil, je lhář. Dej si dvakrát tolik.
+- task: >
+    Každý, kdo si zpívá v koupelně, si dá {{ number::2..4 }} loky.
+- task: >
+    {{ player }}, jsi Áčkař.
+    Od teď musíš místo samohlásek používat pouze A.
+  callback:
+    Áčkař může přestat.
+  delay: 10..20
+- task: >
+    {{ player }}, kdo z hráčů ti přijde nejvíc sexy?
+  result:
+    - Souhlas! Vybraný hráč si dá {{ number:2..4 }} loky.
+    - Ty moc dobře nevidíš, co? Dej si {{ number:2..4 }} loky.
+- task: >
+    Kdo si zkoušel líbání na vlastní ruce, ať si dá {{ number:3..5 }} loků.
+- task: >
+    Kdo po sobě vylizuje talíř, ať si dá {{ number:3..5 }} loků.
+- task: >
+    Napij se vody, ale nepolikej ji a přitom zkus zazpívat písničku.
+  result:
+    - Pokud ostatní poznali, co jsi zpíval, rozdej {{ number:3..4 }} loky.
+      Jinak piješ ty.
