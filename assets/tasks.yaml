@@ -93,7 +93,7 @@
     Hlasujte všichni najednou, prohraní pijou {{ number:2..4 }} loky.
 - task: >
     Jeden po druhém hláskujte příjmení hráče po pravici.
-    Komu se to nepovede, pije {{ number:4..6 }} krát (musíte dokončit kolo).
+    Komu se to nepovede, pije {{ number:4..6 }}krát (musíte dokončit kolo).
     {{ player }}, začínáš!
 - task: >
     {{ player }}, jestl ses maloval/a předtím, než jsi sem šel/šla, rozdej {{ number:2..3 }} loky.
@@ -101,9 +101,9 @@
 - task: >
     Hráč s mincí nejvyšší hodnoty se může rozhodnout, jestli jí někomu dá a ten si dá {{ number:5..8 }} loků, nebo jestli si jí nechá a sám vypije {{ number:5..8 }} loků.
 - task: >
-    Ti, kteří nemají Instagram, pijou {{ number:3..5 }} krát.
+    Ti, kteří nemají Instagram, pijou {{ number:3..5 }}krát.
 - task: >
-    Ti, kteří nehrají počítačové hry, pijou {{ number:3..5 }} krát.
+    Ti, kteří nehrají počítačové hry, pijou {{ number:3..5 }}krát.
 - task: >
     {{ player }} je FLASH.
     Pokaždé, když se mu dolije drink, má pouze 2 minuty, aby ho dopil.
@@ -121,7 +121,7 @@
     V jednu chvíli přestane a ukáže na hráče, který musí navázat a zpívat dál.
     Hráč, který potom zpívá, opět v jednu chvíli přestane a ukáže na dalšího hráče.
     Takto pokračujte dokud se někdo nesplete.
-    Kdo se splete, pije {{ number:3..6 }} krát.
+    Kdo se splete, pije {{ number:3..6 }}krát.
 - task: >
     {{ player }}, můžeš rozdat tolik loků, kolik dokážeš vyjmenovat expřítelů/expřítelkyň {{ player }}.
     Když se spleteš, piješ {{ number:3..4 }} loky.
@@ -143,7 +143,7 @@
     První, kdo vyexuje svůj drink, rozdává {{ number:5..8 }} loků.
 - task: >
     Na cestovatele!
-    Napij se {{ number:2..4 }} krát, pokud jsi někdy spal s cizincem nebo cizinkou.
+    Napij se {{ number:2..4 }}krát, pokud jsi někdy spal s cizincem nebo cizinkou.
 - task: >
     {{ player }}, rozhodni, kdo je horší hráč video her.
     {{ player }} nebo {{ player }}?
@@ -201,3 +201,13 @@
   result:
     - Pokud ostatní poznali, co jsi zpíval, rozdej {{ number:3..4 }} loky.
       Jinak piješ ty.
+- task: >
+    Hráči postupně podají svůj odemčený mobilní telefon na 20 sekund hráči po jejich pravici.
+    Ten se může podívat na cokoli.
+    Pokud hráč mobil nemá, nebo nechce předat, pije {{ number::3..4 }} loky.
+- task: >
+    {{ player }}, zavolej člověku, kterého tajně miluješ.
+    Pokud jsi srab, piješ {{ number::4..5 }}krát.
+- task: >
+    {{ player }}, romanticky vyznej {{ player }} lásku.
+    Pokud si na to netroufáš, piješ {{ number::5..6 }}krát.
