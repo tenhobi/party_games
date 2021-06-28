@@ -1,77 +1,123 @@
 import 'package:flutter/material.dart';
-import 'package:yaml/yaml.dart';
-import "package:flutter/services.dart";
+import 'package:party_games/game/tasks.dart';
+import 'package:party_games/game/topics.dart';
+import 'package:party_games/game/words.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PartyGamesApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Game {
+  final String title;
+  final int id;
+
+  Game(this.title, this.id);
+}
+
+class PartyGamesApp extends StatefulWidget {
+  const PartyGamesApp({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _PartyGamesAppState();
+}
+
+class _PartyGamesAppState extends State<PartyGamesApp> {
+  Game? _selectedGame;
+
+  List<Game> games = [
+    Game('Kufr', 1),
+    Game('Úkoly', 2),
+    Game('Témata', 3),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      title: 'Party Games',
+      home: Navigator(
+        pages: [
+          MaterialPage(
+            key: const ValueKey('GamesListPage'),
+            child: GamesListScreen(
+              games: games,
+              onTapped: _handleGameTapped,
+            ),
+          ),
+          if (_selectedGame != null) GameDetailsPage(game: _selectedGame!)
+        ],
+        onPopPage: (route, result) {
+          if (!route.didPop(result)) {
+            return false;
+          }
+
+          setState(() {
+            _selectedGame = null;
+          });
+
+          return true;
+        },
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+
+  void _handleGameTapped(Game game) {
+    setState(() {
+      _selectedGame = game;
+    });
+  }
+}
+
+class GameDetailsPage extends Page {
+  final Game game;
+
+  GameDetailsPage({
+    required this.game,
+  }) : super(key: ValueKey(game));
+
+  @override
+  Route createRoute(BuildContext context) {
+    return MaterialPageRoute(
+      settings: this,
+      builder: (BuildContext context) {
+        switch (game.id) {
+          case 1:
+            return WordsScreen();
+          case 2:
+            return TasksScreen();
+          case 3:
+            return TopicsScreen();
+          default:
+            return const Text("Unknown game");
+        }
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class GamesListScreen extends StatelessWidget {
+  final List<Game> games;
+  final ValueChanged<Game> onTapped;
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  const GamesListScreen({
+    required this.games,
+    required this.onTapped,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: const Text('Párty hry'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            FutureBuilder(
-                future: rootBundle.loadString('assets/game.yaml'),
-                builder:
-                    (BuildContext context, AsyncSnapshot<String> snapshot) {
-                  final yaml = loadYaml(snapshot.data ?? 'hmm');
-                  return Column(
-                    children: [for (final item in yaml) Text(item.toString())],
-                  );
-                }),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: ListView(
+        children: [
+          for (var game in games)
+            ListTile(
+              title: Text(game.title),
+              onTap: () => onTapped(game),
+            )
+        ],
       ),
     );
   }
