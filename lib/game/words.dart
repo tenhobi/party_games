@@ -43,14 +43,14 @@ class _WordsScreenState extends State<WordsScreen> {
                 _Game(
                   time: time,
                   onFinish: (int score) async {
-                    final player = AudioPlayer();
-                    var _ = await player.setAsset('assets/alarm.wav');
-                    player.play();
-
                     setState(() {
                       playing = false;
                       lastScore = score;
                     });
+
+                    final player = AudioPlayer();
+                    var _ = await player.setAsset('assets/alarm.wav');
+                    player.play();
                   },
                 ),
             ],

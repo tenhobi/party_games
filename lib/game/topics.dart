@@ -41,13 +41,13 @@ class _TopicsScreenState extends State<TopicsScreen> {
                 _Game(
                   time: time,
                   onFinish: () async {
-                    final player = AudioPlayer();
-                    var _ = await player.setAsset('assets/alarm.wav');
-                    player.play();
-
                     setState(() {
                       playing = false;
                     });
+
+                    final player = AudioPlayer();
+                    var _ = await player.setAsset('assets/alarm.wav');
+                    player.play();
                   },
                 ),
             ],
