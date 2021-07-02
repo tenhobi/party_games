@@ -1,213 +1,231 @@
-- task: >
-    {{ player }} a {{ player }} musejí dorovnat svoje drinky.
-    Hráč, který má více ve sklenici, musí dopít na úroveň druhého hráče.
-- task: >
-    {{ player }}, napodob jiného hráče.
-    První, kdo uhádne, o koho jde, rozdává mezi ostatní {{ number:1..4 }} loky!
-- task: >
-    Dej si {{ number:2 }} loky, jestli už jsi někdy naštval někoho z ostatních hráčů.
-- task: >
-    Jeden za druhým jmenujte filmy se zlými mimozemšťany.
-    První, kdo neví, pije {{ number:2..4 }} loky. {{ player }} začíná!
-- task: >
-    Jmenujte jeden po druhém synonyma ke slovu "prsa".
-    První, kdo zopakuje nebo neví, pije {{ number:2..3 }}krát.
-    {{ player }}, začínáš!
-- task: >
-    "Žil bys raději ve světě bez manželství nebo ve světě bez rozvodů?"
-    Všichni hlasujte najednou, prohraná skupina pije {{ number:2..3 }}krát.
-- task: >
-    "Kolik stály tvoje boty?"
-    Každý řekněte částku a pak klikněte na tlačítko pokračovat.
-    {{ player }}, začínáš!
-  result:
-    - Všichni s botami přes 1000 Kč pijou {{ number:2..4 }} loky!
-    - Všichni, kteří neznají cenu svých bot, pijou {{ number:2..4 }} loky!
-- task: >
-    {{ player }}, jmenuj nějaký doplněk (hodinky, náhrdelník, náušnice, ...).
-    Každý, kdo má tento doplněk na sobě si musí dát {{ number:2..4 }} loky.
-- task: >
-    {{ player }}, řekni písmeno.
-    Každý k němu postupně přidává další písmena, dokud nedokončíte slovo.
-    Osoba, která dokončí slovo pije {{ number:4..6 }} loků.
-- task: >
-    {{ player }}, rozdej {{ number:2..4 }} loky hráčům, kteří jsou menší než ty.
-    Pokud to není možné, vypij je, skrčku!
-- task: >
-    Každý, jehož věk je liché číslo, pošle někomu fotku, nebo si dá {{ number:5..7 }} loků!
-- task: >
-    Obdržel by jsi raději 20 000 000 Kč teď hned, nebo měl svojí vysněnou práci za 100 000 Kč měsíčně?
-    Všichni hlasujte najednou, prohraní pijou {{ number:2..4 }} loky.
-- task: >
-    Jmenujte postupně písničky od Kabátů.
-    Kdo neví, nebo zopakuje písničku, pije {{ number:3..4 }} loky.
-    {{ player }}, začínáš!
-- task: >
-    Každý, kdo má výstřih, si dá {{ number:5..7 }} loků.
-- task: >
-    {{ player }} musí šišlat, dokud hra neřekne, že může přestat.
-    Když poruší, tak pije.
-  callback: >
-    Šišlal může přestat šišlat.
-  delay: 10..20
-- task: >
-    Pokud máš díry v ponožkách, dej si {{ number:2..4 }} loky.
-    A taky zvaž, že by sis koupil nové ponožky.
-- task: >
-    Černá nebo bílá?
-    Každý si vybere svou stranu a potom klikněte na tlačítko pokračovat.
-  result:
-    - Černá. Rasisti pijou {{ number:2..4 }} loky!
-    - Bílá. Pijete {{ number:2..3 }} loky, prostě proto.
-- task: >
-    {{ player }} a {{ player }} musejí doexovat svoje drinky.
-- task: >
-    Všichni po jednom řekněte nějakou věc, kterou jste někdy dělali.
-    Každý, kdo to nikdy nedělal, se musí napít.
-    {{ player }}, začínáš.
-- task: >
-    {{ player }}, rozdej {{ number:2..4 }} loky někomu, kdo už byl od začátku večera na záchodě.
-- task: >
-    Dopij svůj drink, jestli jsi blond!
-- task: >
-    {{ player }}, pokud se ti podaří nabídnout někomu svůj drink do konce hry a on se napije, musí vyexovat svůj drink.
-- task: >
-    {{ player }}, rozhodni: kdo myslíš, že by se MÉNĚ ztrapnil při karaoke večeru, {{ player }} nebo {{ player }}?
-  result: >
-    - Hvězda večera rozdává mezi ostatní {{ number:2..4 }} loky!
-- task: >
-    {{ player }}, tajně mysli na jednu věc, kterou budeš dělat zítra.
-    Hráči dokola hádají a kdo věc uhádne, rozdává {{ number:3..4 }} loky.
-    {{ player }} začíná.
-- task: >
-    {{ player }}, jmenuj přednosti {{ player }}.
-  result: >
-    - Rozdej tolik loků, kolik jsi vyjmenoval předností.
-- task: >
-    Byli byste raději slavná nebo nejlepší kamarád někoho slavného?
-    Všichni hlasujte najednou, prohraní pijou {{ number:2..4 }} loky.
-- task: >
-    {{ player }}, pravda, odvaha nebo exnout drink? {{ player }}, dáváš otázku nebo vybíráš úkol.
-- task: >
-    Chtěli byste raději mít talent kohokoliv, koho potkáte, nebo umět telekinezi?
-    Hlasujte všichni najednou, prohraní pijou {{ number:2..4 }} loky.
-- task: >
-    Jeden po druhém hláskujte příjmení hráče po pravici.
-    Komu se to nepovede, pije {{ number:4..6 }}krát (musíte dokončit kolo).
-    {{ player }}, začínáš!
-- task: >
-    {{ player }}, jestl ses maloval/a předtím, než jsi sem šel/šla, rozdej {{ number:2..3 }} loky.
-    Pokud ne, vypij je!
-- task: >
-    Hráč s mincí nejvyšší hodnoty se může rozhodnout, jestli jí někomu dá a ten si dá {{ number:5..8 }} loků, nebo jestli si jí nechá a sám vypije {{ number:5..8 }} loků.
-- task: >
-    Ti, kteří nemají Instagram, pijou {{ number:3..5 }}krát.
-- task: >
-    Ti, kteří nehrají počítačové hry, pijou {{ number:3..5 }}krát.
-- task: >
-    {{ player }} je FLASH.
-    Pokaždé, když se mu dolije drink, má pouze 2 minuty, aby ho dopil.
-    Do odvolání!
-  callback:
-    FLASH už může zase pít normálně.
-  delay: 5..25
-- task: >
-    Jeden po druhém jmenujte dokola "pokerové kombinace".
-    První, kdo neví, pije {{ number:2..4 }} loky.
-    {{ player }} začíná. 
-- task: >
-    "MUSIC JAM"
-    {{ player }} začne zpívat písničku.
-    V jednu chvíli přestane a ukáže na hráče, který musí navázat a zpívat dál.
-    Hráč, který potom zpívá, opět v jednu chvíli přestane a ukáže na dalšího hráče.
-    Takto pokračujte dokud se někdo nesplete.
-    Kdo se splete, pije {{ number:3..6 }}krát.
-- task: >
-    {{ player }}, můžeš rozdat tolik loků, kolik dokážeš vyjmenovat expřítelů/expřítelkyň {{ player }}.
-    Když se spleteš, piješ {{ number:3..4 }} loky.
-- task: >
-    {{ player }}, můžeš rozdat tolik loků, kolik uděláš najednou precizních kliků.
-- task: >
-    {{ player }}, můžeš rozdat tolik loků, kolik uděláš najednou desítek precizních dřepů.
-- task: >
-    {{ player }}, napij se tolikrát, kolik je hráčů ve hře.
-- task: >
-    Srovnejte drinky!
-    Všichni musí dopít na úroveň {{ player }}.
-    Kdo má méně, musí svůj drink vyexovat.
-- task: >
-    První, kdo vytáhne kondom, rozdává {{ number:3..6 }} loků.
-- task: >
-    První, kdo ukáže svůj Tinder profil, rozdává {{ number:3..6 }} loků.
-- task: >
-    První, kdo vyexuje svůj drink, rozdává {{ number:5..8 }} loků.
-- task: >
-    Na cestovatele!
-    Napij se {{ number:2..4 }}krát, pokud jsi někdy spal s cizincem nebo cizinkou.
-- task: >
-    {{ player }}, rozhodni, kdo je horší hráč video her.
-    {{ player }} nebo {{ player }}?
-    Nešika pije {{ number:2..5 }} loky.
-- task: >
-    Jeden po druhém jmenujte dokola postavy z Knihy džunglí.
-    Kdo neví, pije {{ number:2..4 }} loky.
-- task: >
-    Napij se tolikrát, s kolika hráči bys chtěl něco mít.
-- task: >
-    {{ player }}, pokud zvládneš vyjmenovat 3 písničky, které byly hitem ve Španělsku, rozdáváš {{ number:3..4 }} loky.
-    Pokud ne, musíš je vypít.
-- task: >
-    Všichni dopijte svoje drinky.
-- task: >
-    {{ player }}, řekni svůj nejtrapnější zážitek.
-    Pokud ostatní uznají, že to bylo opravdu trapné, rozdáváš {{ number:3..5 }} loky.
-    Pokud ne, piješ ty.
-- task: >
-    {{ player }}, rozdej tolik loků, kolik přiznáš svých slabostí. 
-- task: >
-    {{ player }} a {{ player }} každý rozdá {{ number }} loků, pokud si dají pusu.
-    Pokud ne, pijí oni.
-- task: >
-    {{ player }} může rozdat {{ number:2..4 }} loky, pokud poví, jaký sexuální akt udělal, ale už nikdy neudělá?
-- task: >
-    První kdo někomu pošle zprávu "MILUJI TĚ" rozdává {{ number:3..4 }} loky.  
-- task: >
-    Pokud jsi měl sex s někým z hráčů, dej si {{ number::2..4 }} loky.
-- task: >
-    {{ player }}, rozdej {{ number:2..3 }} loky hráčům, kterým řekneš jejich největší přednost.
-- task: >
-    Každý, kdo se kouká na porno, si dá {{ number::3..4 }} loky.
-  result: >
-    - Kdo se nenapil, je lhář. Dej si dvakrát tolik.
-- task: >
-    Každý, kdo si zpívá v koupelně, si dá {{ number::2..4 }} loky.
-- task: >
-    {{ player }}, jsi Áčkař.
-    Od teď musíš místo samohlásek používat pouze A.
-  callback:
-    Áčkař může přestat.
-  delay: 10..20
-- task: >
-    {{ player }}, kdo z hráčů ti přijde nejvíc sexy?
-  result:
-    - Souhlas! Vybraný hráč si dá {{ number:2..4 }} loky.
-    - Ty moc dobře nevidíš, co? Dej si {{ number:2..4 }} loky.
-- task: >
-    Kdo si zkoušel líbání na vlastní ruce, ať si dá {{ number:3..5 }} loků.
-- task: >
-    Kdo po sobě vylizuje talíř, ať si dá {{ number:3..5 }} loků.
-- task: >
-    Napij se vody, ale nepolikej ji a přitom zkus zazpívat písničku.
-  result:
-    - Pokud ostatní poznali, co jsi zpíval, rozdej {{ number:3..4 }} loky.
-      Jinak piješ ty.
-- task: >
-    Hráči postupně podají svůj odemčený mobilní telefon na 20 sekund hráči po jejich pravici.
-    Ten se může podívat na cokoli.
-    Pokud hráč mobil nemá, nebo nechce předat, pije {{ number::3..4 }} loky.
-- task: >
-    {{ player }}, zavolej člověku, kterého tajně miluješ.
-    Pokud jsi srab, piješ {{ number::4..5 }}krát.
-- task: >
-    {{ player }}, romanticky vyznej {{ player }} lásku.
-    Pokud si na to netroufáš, piješ {{ number::5..6 }}krát.
+# Tasks - ÚKOL (Hráč jednoduše musí splnit zadaný úkol.)
+- task: Všichni co mají na sobě brýle si dají dva loky.
+- task: $, zachrochtej jako prase. Jinak piješ tři loky.
+- task: $ vybere největšího lamače srdcí. Don Juan se čtyřikrát napije.
+- task: Kdo má na oblečení jakýkoliv knoflík se dvakrát napije.
+- task: Všichni kdo na sobě mají hodinky si dají loka.
+- task: Všichni kdo na sobě nemají spodní prádlo si dají dva loky.
+- task: $ a $ musí 3x za sebou zopakovat "PUDL PRDL PUDR". Pokud to pozají, 2x pije.
+- task: $ musí mít příští kolo zavřené oči. Pokud to zvládne, může rozdat 3 loky. Pokud nezvládne, zak si musí dát 4 loky.
+- task: $ musí dát někomu napít svého pití. Pokud nikdo nepřijme, tak si musí dát 2 loky.
+- task: Kdo z hráčů je nejstarší? Stařešina jednomu z omladiny rozdá 2 loky.
+- task: Všichni, kteří jsou single, si dají osaměle jeden lok.
+- task: $ si musí hodit mincí. Pokud padne panna, jednou se napije. Pokud padne orel, tak pijí ostatní.
+- task: Kámen, nůžky, papír. $ a $ hrají na tři vítězné body. Kdo prohraje si musí dát dva loky.
+- task: Hráč s nejkratším příjmením se jednou napije.
+- task: Hráč s nejdelším křestním jménem se jednou napije.
+- task: $ a $ si na dvě hrací kola vymění drink.
+- task: $ může rozdat 4 loky. Komukoli.
+- task: $ se musí napít bez použití rukou. Jinak si musí dát 5 velkých loků.
+- task: $ vybere nejvíc sexy hráče. Ten pak musí předvést krátký sexy taneček, jinak se musí 5x napít. 
+- task: Zírací challenge. $ a $ na sebe musí zblízka zírat. Kdo se první zasměje nebo uhne pohledem si musí dát dva loky.
+- task: Kdo z hráčů se poslední dotkne země, jednou pije.
+- task: $ musí předvést nadrženého tygra, jinak se 3x napije.
+- task: $ vybere nejchytřejší osobu z hráčů. Einstein může poté někomu věnovat dva loky.
+- task: $ vybere nejhezčí osobu z hráčů. Krasotinka může poté někomu věnovat tři loky.
+- task: Všichni musí příští kolo šeptat. Pokud to někdo nedodrží, tak musí dopít svůj drink.
+- task: $ je Áčkař. Příštích 7 kol musí místo samohlásek používat pouze A.
+- task: $ udělá 10 dřepů. Pokud ano, tak může někomu rozdat 3 loky.
+- task: $ udělá 5 kliků. Pokud ano, tak může někomu rozdat 4 loky.
+- task: Všichni s vysokoškolským titulem si dají 3 moudré loky.
+- task: $ musí říct vtip. Pokud se mu nikdo ani lehce nezasměje, tak si musí dát dva loky.
+- task: $ a $ si na tři hrací kola vymění svoje místa.
+- task: Všichni muži si dají dva loky.
+- task: Všechny ženy si dají dva loky.
+- task: Všichni kdo na sobě mají jeansi si dají jednoho loka.
+- task: $ a $ se musí 2x napít.
+- task: $ se nesmí nikomu po dobu příštího kola podívat do očí. Pokud bude někým přistižen, jednou se napije.
+- task: $ je Simon. Všichni hrají hru Simon říká. Kdo první příkaz vykoná špatně, dá si dva loky.
+- task: Kdo z hráčů poslední zvedne levou ruku, jednou pije.
+- task: Kdo z hráčů poslední zvedne pravou ruku, jednou pije.
+- task: $ a $ musejí dorovnat svoje drinky. Hráč, který má více ve sklenici, musí dopít na úroveň druhého hráče.
+- task: $, napodob jiného hráče. První, kdo uhádne, o koho jde, rozdává mezi ostatní 4 loky!
+- task: Dej si dva loky, pokud jsi už někdy naštval někoho z ostatních hráčů.
+- task: Kolik stály tvoje boty? Každý s botami dražšími přes 1000 Kč pijou 2 loky. Všichni, kteří neznají cenu svých bot si dají jeden lok.
+- task: $, řekni písmeno. Každý k němu postupně přidává další písmena, dokud nedokončíte slovo. Hráč, který dokončí slovo pije 3 loky.
+- task: $, rozdej 3 loky hráčům, kteří jsou menší než ty. Pokud jsi nejmenší, vypij je, skrčku!
+- task: $, rozdej 3 loky hráčům, kteří jsou vyšší než ty. Pokud jsi největší, vypij je, obře!
+- task: Každý, jehož věk je liché číslo pije dvakrát!
+- task: Každý, jehož věk je sudé číslo pije dvakrát!
+- task: $ musí příštích 7 kol šišlat.
+- task: $ musí příštích 7 kol koktat.
+- task: $ je FLASH. Pokaždé, když se mu dolije drink, má pouze 2 minuty, aby ho dopil. Do konce hry!
+- task: Pokud máš díry v ponožkách, dej si dva loky. A taky zvaž, že by sis koupil/a nové ponožky!
+- task: $ a $ musejí doexovat svoje drinky.
+- task: $, rozdej dva loky někomu, kdo už byl od začátku večera na záchodě.
+- task: $, pokud se ti podaří někomu do konce hry nabídnout svůj drink on/a se napije, musí vyexovat svůj drink.
+- task: $, rozdej tolik loků, kolik vyjmenuješ předností $.
+- task: $, pravda, odvaha nebo exnout drink? $, dáváš otázku nebo vybíráš úkol.
+- task: Jeden po druhém hláskujte příjmení hráče po pravici. Komu se to nepovede, pije třikrát (musíte dokončit kolo). $, začínáš!
+- task: $, jestl ses maloval/a předtím, než jsi sem šel/šla, rozdej tři loky. Pokud ne, vypij je!
+- task: Hráč s mincí nejvyšší hodnoty se může rozhodnout, jestli jí někomu dá a ten si dá 3 loky, nebo jestli si jí nechá a sám vypije 7 loků.
+- task: Ti, kteří nemají Instagram, pijou dvakrát.
+- task: Ti, kteří nehrají počítačové hry, pijou dvakrát.
+- task: $, můžeš rozdat tolik loků, kolik dokážeš vyjmenovat expřítelů/expřítelkyň $. Pokud se spleteš, piješ 3 loky.
+- task: $, napij se tolikrát, kolik je hráčů ve hře.
+- task: Srovnejte drinky! Všichni musí dopít na úroveň $. Kdo má méně, musí svůj drink vyexovat.
+- task: První, kdo vytáhne kondom, rozdává 4 loky.
+- task: První, kdo ukáže svůj Tinder, rozdává 2 loky.
+- task: První, kdo vyexuje svůj drink, rozdává 3 loky.
+- task: Na cestovatele! Napij se třikrát, pokud jsi někdy spal s cizincem nebo cizinkou.
+- task: Napij se tolikrát, s kolika hráči bys chtěl něco mít.
+- task: Všichni dopijte svoje drinky.
+- task: $, rozdej tolik loků, kolik přiznáš svých slabostí.
+- task: $ a $ každý rozdá 4 loky, pokud si dají pusu. Pokud ne, pijí oni.
+- task: $ může rozdat 3 loky, pokud poví, jaký sexuální akt zažil, ale už nikdy neudělá?
+- task: První, kdo někomu pošle zprávu MILUJI TĚ, rozdává 3 loky.
+- task: Pokud jsi měl sex s někým z hráčů, dej si 3 loky.
+- task: Každý, kdo si zpívá v koupelně, se dvakrát napije.
+- task: Napij se vody, ale nepolikej ji a přitom zkus zazpívat písničku. Pokud ostatní poznali, co jsi zpíval, rozdej 4 loky. Jinak piješ ty.
+- task: $, zavolej člověku, kterého miluješ. Pokud jsi srab, piješ čtyřikrát.
+- task: $, romanticky vyznej $ lásku. Pokud si na to netroufáš, piješ pětkrát.
+- task: $ dopije svůj drink ve stojce. $ a $ mu/jí mohou držet nohy.
+- task: Kdo z hráčů měl ve škole nejlepší známky? Šprt se 2x napije.
+- task: $ a $ si navzájem řeknou kompliment. Pokud ne, tak si dají dva loky.
+- task: $ udělá 10 dřepů. Pokud ano, tak může někomu rozdat 3 loky.
+- task: $ se poslepu dotkne nosu. Pokud se netrefí, dá si 2 loky.
+
+# Questions - OTÁZKA (Hráči se musí shodnout na jednom hráči, na kterého otázka nejvíce sedí.)
+- question: Kdo z hráčů je nejstřízlivější? Poloabstinent musí exnout zbytek svého pití.
+- question: Kdo z hráčů má stejnou barvu trika jako $? Tito hráči si dají dva loky.
+- question: Kdo z hráčů má nejprázdnější sklenici? Exne zbytek jejího obsahu.
+- question: V jakém měsíci se narodil/a $? Ostatní hráči narození v tomto měsíci si dají dva loky.
+- question: Kdo z hráčů je nejmladší? Miminko si jednou cucne svého pitíčka.
+- question: Kdo z hráčů bude nejspíše vyhozen z baru či hospody? Bezhospodec se jednou napije.
+- question: Kdo z hráčů neumí udržet nervy na uzdě? Hulk si dá pěkne v klidu dva loky.
+- question: Kdo z hráčů je nejlepší fotbalista? Dá si dva loky.
+- question: Kdo z hráčů tráví nejvíc času na záchodě? Posera se jednou napije.
+- question: Kdo z hráčů je nejchytřejší? Einstein si dá dva moudré loky.
+- question: Kdo z hráčů je nejhezčí? Krasotinka si dá 3 loky.
+- question: Kdo z hráčů tráví nejvíc času v koupelně? Voňavka se jednou napije.
+- question: Kdo z hráčů má pouze jednu náušnici? Pirát se 2x napije.
+- question: Kdo z hráčů je největší spáč? Šípková růženka se dvakrát napije.
+- question: Kdo z hráčů dal jako poslední nějaký příspěvek na Facebook? Facebookař se dvakrát napije.
+- question: "Kdo z hráčů dal jako poslední nějaký příspěvek na Instagram? #instragrammer se dvakrát napije."
+- question: Kdo aktivně nedělá aspoň jeden jakýkoliv sport? Pecivál se 1x napije, ale pomalu, ať si rychlým pohybem neublíží.
+- question: Kdo z hráčů tráví nejvíc času u počítače? Dvakrát se napije.
+- question: Kdo z hráčů nejvíce utrácí peníze za blbosti? Rozhazovač se 3x napije.
+- question: Kdo se nejrychleji opije? Všichni kromě rychloopíječe si dají dva loky.
+- question: Kdo z hráčů má největší ruku (dlaň)? Daný hráč se pomocí velké ruky jednou napije.
+- question: Kdo z hráčů má nejmenší ruku (dlaň)? Daný hráč se pokusí uchytit obří půllitr svými maličkými ručkami a jednou se napít.
+- question: Kdo z hráčů tráví nejvíce času ve sprše nebo ve vaně? Lachtan se dvakrát napije. 
+- question: Kdo z hráčů je nejsilnější? Herkules si dá dva silné loky.
+- question: Koho z hráčů tato hra nudí? Exne svůj drink.
+- question: Kdo je silnější? $ nebo $. Silák se dvakrát napije.
+- question: Kdo z hráčů toho obvykle nejvíc vypije? Velbloud se jednou pořááádně napije.
+- question: Kdo nejlépe vaří? Kuchtík si dá dva loky.
+- question: Kdo z hráčů toho v pití alkoholu nejvíce vydrží? Železná játra exnou zbytek svého pití.
+- question: Kdo by se MÉNĚ ztrapnil při karaoke večeru, $ nebo $?
+
+# Voting - CO BYS RADŠI? (Hráči dají jednu pěst před sebe a po odpočtu 3, 2, 1, teď hlasují palcem nahoru pro první variantu a palcem dolu pro druhou variantu. Menšina po hlasování se jednou napije.)
+- vote: Android vs iOS
+- vote: Superschopnosti. Létání vs zastavení času.
+- vote: Hudba. Rock vs Pop.
+- vote: Superschopnosti. Neviditelnost vs létání. 
+- vote: Zmrzlina vs čokoláda.
+- vote: Raději bys uhořel nebo se utopil?
+- vote: Superschopnosti. Neviditelnost vs teleportace.
+- vote: Léto vs zima.
+- vote: Lyže vs snowboard?
+- vote: Jaro vs pozdim.
+- vote: Kamarádi vs sex.
+- vote: Pivo vs víno.
+- vote: Pes vs kočka.
+- vote: Brad Pitt vs Leonardo DiCaprio.
+- vote: $ vs $
+- vote: Nikdy jsem nepomlouval/a kámoše.
+- vote: Filmy. Star Wars vs Star Trek.
+- vote: Filmy. Harry Potter vs Pán prstenů.
+- vote: Pepsi vs Coca Cola?
+- vote: Justin Bieber vs Selena Gomez.
+- vote: Žil bys raději ve světě bez manželství nebo ve světě bez rozvodů?
+- vote: Obdržel by jsi raději 20 000 000 Kč teď hned, nebo měl svojí vysněnou práci za 100 000 Kč měsíčně?
+- vote: Černá nebo bílá?
+- vote: Byli byste raději slavná osoba nebo nejlepší kamarád někoho slavného?
+
+# Never have I ever - NIKDY JSEM (Přečtěte větu začínající slovy "nikdy jsem..." a nějaká činnost. Pokud jste to dělali, napijte se.)
+- never: Nikdy jsem nepozvracel/a kamaráda.
+- never: Nikdy jsem si nečistil/a zuby prstem.
+- never: Nikdy jsem nebyl/a v Praze.
+- never: Nikdy jsem nebyl/a v Brně.
+- never: Nikdy jsem nepil/a mléko s alkoholem.
+- never: Nikdy jsem si nekousal/a nehty na noze.
+- never: Nikdy jsem nešáhl/a klukovi na zadek.
+- never: Nikdy jsem nešáhl/a holce na zadek.
+- never: Nikdy jsem si nečetl/a časopis na záchodě.
+- never: Nikdy jsem si nekousal/a nehty.
+- never: Nikdy jsem nevolil/a.
+- never: Nikdy jsem nesnědl/a brouka.
+- never: Nikdy jsem nejedl/a šušně.
+- never: Nikdy jsem si nečuchl/a ke svému prdu.
+- never: Nikdy jsem netancoval/a makarenu.
+- never: Nikdy jsem neplivl/a nikomu do jídla nebo pití.
+- never: Nikdy jsem neurážel/a Miloše Zemana.
+- never: Nikdy jsem neurážel/a Babiše.
+- never: Nikdy jsem si neprdl/a na veřejnosti.
+- never: Nikdy jsem nic neukradl/a.
+- never: Nikdy jsem se na záchodě neutřel/a ruličkou od papíru.
+- never: Nikdy jsem nepodváděl/a při hře.
+- never: Nikdy jsem se nefotil/a nahý/á.
+- never: Nikdy jsem neposílal/a nahé fotky.
+- never: Nikdy jsem se nedíval/a na porno.
+- never: Nikdy jsem nezkoušel/a líbání na vlastní ruce.
+- never: Nikdy jsem po sobě nevylízal/a talíř.
+- never: Nikdy jsem neměl/a trojku.
+- never: Nikdy jsem neměl/a snídani v posteli.
+- never: Nikdy jsem se necítil, jako bych byl ve skutečném nebezpečí.
+- never: Nikdy jsem nikdy nespal nahý.
+
+# One after another - KOLOTOČ (Dle zadaného tématu hráči postupně říkají své odpovědi. Hra probíhá po směru hodinových ručiček. Hráč, který nedokáže do 5 sekund odpovědět pije dle zadání.)
+- carousel: Filmy s Arnoldem Schwarzeneggerem. Začíná $.
+- carousel: Filmy se Sylvestrem Stallonem. Začíná $.
+- carousel: Filmy s Willem Smithem. Začíná $.
+- carousel: Filmy se Scarlett Johansson. Začíná $.
+- carousel: Značky mobilních telefonů. $ určí, kdo začne. Poražený si dá dva loky.
+- carousel: Filmy s Tomem Hanksem. Začíná $. Poražený se jednou napije.
+- carousel: Chemické prvky. $ určí chemika, který začne. Poražený si dá dva loky.
+- carousel: Filmoví záporáci. Začíná $. Poražený si dá dva loky.
+- carousel: Planety. Začíná $. Na koho nevyzbyde nebo neví se 3x napije. 
+- carousel: Filmy s Bradem Pittem. Začíná $. Poražený se jednou napije.
+- carousel: Filmy s Angelinou Jolie. Začíná $. Poražený se jednou napije.
+- carousel: Barvy. Začíná $. Barvový necita se jednou napije.
+- carousel: Fotbalisti. $ rozhodne, kdo začne. Poražený se 2x napije.
+- carousel: Superhrdinové. Začíná $. Poražený se 2x napije.
+- carousel: Slovní kopaná. $ vykopává. Další hráč musí říct slovo začínající na poslední dvě písmena slova předešlého. Kdo neví dá si 2 loky.
+- carousel: Africká zvířata. $ začne. Poražený se dvakrát napije.
+- carousel: Rým slova LÍPA. Začíná $. Eminemova babička si dá tři loky.
+- carousel: Vlajky obsahující zelenou. $ začíná. Poražený se 2x napije.
+- carousel: Vlajky obsahující modrou. $ začíná. Poražený se 2x napije.
+- carousel: Vlajky obsahující červenou. $ začíná. Poražený se 2x napije.
+- carousel: Vlajky obsahující černou. $ začíná. Poražený se 2x napije.
+- carousel: Skládačka. $ řekne nějaké slovo. Další hráč zopakuje a přidá další slovo. Kdo skládačku pokazí, zvakrát se napije.
+- carousel: Asijsé státy. Začíná $. Poražený se dvakrát napije.
+- carousel: Státy USA. Začíná $. Poražený se napije.
+- carousel: Evropské státy. Začíná $. Poražený se třikrát napije.
+- carousel: Světadíly. Začíná $. Na koho nevyzbyde nebo neví se 2x napije.
+- carousel: Africké státy. Začíná $. Poražený se napije.
+- carousel: Druhy alkoholu. Začíná $. Poražený se jednou napije.
+- carousel: Hokejisti. $ rozhodne, kdo začne. Poražený se napije.
+- carousel: Značky piva. Začíná $. Vinař si dá dva loky.
+- carousel: Značky aut. Začíná $. Cyklista si dá 2 loky.
+- carousel: Značky mobilních telefonů. Začíná $. Neandrtálec si dá dva loky.
+- carousel: Značky oblečení. Začíná $. Fashion neandrtálec si dá dva loky.
+- carousel: Barvy. Začíná $. Barvový necita se jednou napije. 
+- carousel: Druhy vína. Začíná $. Pivař si dá dva loky.
+- carousel: Vodní zvířata. $ začne. Poražený se dvakrát napije.
+- carousel: Kraje ČR. $ začne. Poražený se 3x napije.
+- carousel: Prezidenti ČR. $ začíná. Poražený se 2x napije.
+- carousel: Rasy psů. $ určí, kdo začíná. Poražený musí dát tři loky.
+- carousel: Rasy koček. $ určí, kdo začíná. Poražený musí dát dva loky.
+- carousel: Filmy se zlými mimozemšťany. První, kdo neví, si dá 2 loky.
+- carousel: Synonyma ke slovu PRSA. První, kdo zopakuje nebo neví, pije dvakrát. $, začínáš!
+- carousel: Synonyma ke slovu PENIS. První, kdo zopakuje nebo neví, pije dvakrát. $, začínáš!
+- carousel: Synonyma ke slovu ZADEK. První, kdo zopakuje nebo neví, pije dvakrát. $, začínáš!
+- carousel: Synonyma ke slovu VAGÍNA. První, kdo zopakuje nebo neví, pije dvakrát. $, začínáš!
+- carousel: Písničky od Kabátů. Kdo neví, nebo zopakuje písničku, pije 2 loky.
+- carousel: České filmy. Kdo neví, nebo zopakuje film, pije 2 loky.
+- carousel: Pokerové kombinace. První, kdo neví, pije třikrát. $ začíná.
+- carousel: MUSIC JAM. $ začne zpívat písničku. V jednu chvíli přestane a ukáže na hráče, který musí navázat dál. Takto pokračujte dokud se někdo nesplete. Kdo se splete, pije třikrát.
+- carousel: Postavy z Knihy džunglí. Kdo neví, pije dvakrát.
+- carousel: Španělské písničky. Kdo neví, pije.
+

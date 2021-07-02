@@ -1,7 +1,12 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter/services.dart' as s;
+
+import 'package:yaml/yaml.dart';
+import 'package:just_audio/just_audio.dart';
 
 class WordsScreen extends StatefulWidget {
   const WordsScreen({Key? key}) : super(key: key);
@@ -13,7 +18,7 @@ class WordsScreen extends StatefulWidget {
 class _WordsScreenState extends State<WordsScreen> {
   bool playing = false;
   int lastScore = 0;
-  int? time;
+  int time = 30;
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +30,23 @@ class _WordsScreenState extends State<WordsScreen> {
               const Align(alignment: Alignment.topLeft, child: BackButton()),
               if (lastScore != 0) Text('poslední skóre $lastScore'),
               if (!playing)
-                _Lobby(onStart: (int selectedTime) {
-                  setState(() {
-                    playing = true;
-                    time = selectedTime;
-                  });
-                })
+                _Lobby(
+                  initTime: time,
+                  onStart: (int selectedTime) {
+                    setState(() {
+                      playing = true;
+                      time = selectedTime;
+                    });
+                  },
+                )
               else
                 _Game(
-                  time: time ?? 30,
-                  onFinish: (int score) {
+                  time: time,
+                  onFinish: (int score) async {
+                    final player = AudioPlayer();
+                    var _ = await player.setAsset('assets/alarm.wav');
+                    player.play();
+
                     setState(() {
                       playing = false;
                       lastScore = score;
@@ -48,16 +60,24 @@ class _WordsScreenState extends State<WordsScreen> {
 }
 
 class _Lobby extends StatefulWidget {
+  final int initTime;
   final void Function(int) onStart;
 
-  const _Lobby({required this.onStart, Key? key}) : super(key: key);
+  const _Lobby({required this.initTime, required this.onStart, Key? key})
+      : super(key: key);
 
   @override
   __LobbyState createState() => __LobbyState();
 }
 
 class __LobbyState extends State<_Lobby> {
-  double time = 3;
+  late double time;
+
+  @override
+  void initState() {
+    super.initState();
+    time = (widget.initTime / 10).toDouble();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +87,7 @@ class __LobbyState extends State<_Lobby> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Kufr', style: Theme.of(context).textTheme.headline2),
+          Text('Hra Kufr', style: Theme.of(context).textTheme.headline2),
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: Row(
@@ -81,9 +101,9 @@ class __LobbyState extends State<_Lobby> {
                       time = newTime;
                     });
                   },
-                  divisions: 9,
+                  divisions: 17,
                   min: 1,
-                  max: 12,
+                  max: 18,
                   label: "${time.toInt()}0 s",
                 )
               ],
@@ -115,6 +135,9 @@ class _Game extends StatefulWidget {
 class _GameState extends State<_Game> {
   late int time;
   late Timer _timer;
+  int score = 0;
+  late List<String> words;
+  String word = "";
 
   void startTimer() {
     time = widget.time;
@@ -126,7 +149,7 @@ class _GameState extends State<_Game> {
           setState(() {
             timer.cancel();
           });
-          widget.onFinish(3);
+          widget.onFinish(score);
         } else {
           setState(() {
             time--;
@@ -138,18 +161,94 @@ class _GameState extends State<_Game> {
 
   @override
   void initState() {
-    startTimer();
     super.initState();
+    startTimer();
+
+    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+      await setUpWords();
+      setNextWord();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Text('$time');
+    return Expanded(
+      flex: 1,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('čas: $time'),
+          Text('skóre: $score'),
+          Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Text(
+              word,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline2,
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: 100.0,
+                height: 50.0,
+                child: ElevatedButton(
+                  child: const Text('špatně'),
+                  style: ElevatedButton.styleFrom(primary: Colors.red),
+                  onPressed: () => buttonClickedHandler(correct: false),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(),
+              ),
+              SizedBox(
+                width: 100.0,
+                height: 50.0,
+                child: ElevatedButton(
+                  child: const Text('správně'),
+                  style: ElevatedButton.styleFrom(primary: Colors.blue),
+                  onPressed: () => buttonClickedHandler(correct: true),
+                ),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
   }
 
   @override
   void dispose() {
     _timer.cancel();
     super.dispose();
+  }
+
+  void buttonClickedHandler({required bool correct}) {
+    if (correct) {
+      setState(() {
+        score++;
+      });
+    }
+
+    setNextWord();
+  }
+
+  Future<void> setUpWords() async {
+    final data = await s.rootBundle.loadString('assets/words.yaml');
+    final mapData = loadYaml(data);
+
+    words = <String>[];
+    for (var item in mapData) {
+      words.add(item);
+    }
+  }
+
+  void setNextWord() {
+    var random = Random();
+    setState(() {
+      word = words[random.nextInt(words.length)];
+    });
   }
 }

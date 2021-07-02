@@ -8,6 +8,7 @@ environment:
 
 dependencies:
   yaml: ^3.1.0
+  just_audio: ^0.8.0
   flutter:
     sdk: flutter
 
@@ -24,3 +25,4 @@ flutter:
     - assets/tasks.yaml
     - assets/topics.yaml
     - assets/words.yaml
+    - assets/alarm.wav

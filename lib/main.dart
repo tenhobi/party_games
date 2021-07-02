@@ -81,7 +81,7 @@ class GameDetailsPage extends Page {
       builder: (BuildContext context) {
         switch (game.id) {
           case 1:
-            return WordsScreen();
+            return const WordsScreen();
           case 2:
             return TasksScreen();
           case 3:
