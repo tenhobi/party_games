@@ -32,8 +32,8 @@ class _TopicsScreenState extends State<TopicsScreen> {
                   initTime: time,
                   onStart: (int selectedTime) {
                     setState(() {
-                      playing = true;
                       time = selectedTime;
+                      playing = true;
                     });
                   },
                 )
@@ -84,7 +84,7 @@ class __LobbyState extends State<_Lobby> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Hra Témata', style: Theme.of(context).textTheme.headline2),
+          Text('Hra Témata', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: Row(

@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:collection';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -19,7 +18,7 @@ class TasksScreen extends StatefulWidget {
 class _TasksScreenState extends State<TasksScreen> {
   bool playing = false;
   List<String> players = [];
-  int taskCount = 0;
+  int taskCount = 50;
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +33,9 @@ class _TasksScreenState extends State<TasksScreen> {
                   players: players,
                   onStart: (int newTasksCount, List<String> newPlayers) {
                     setState(() {
-                      playing = true;
                       players = newPlayers;
                       taskCount = newTasksCount;
+                      playing = true;
                     });
                   },
                 )
@@ -170,8 +169,6 @@ class _GameState extends State<_Game> {
       await setUpTasks();
       setNextTask();
     });
-
-    widget.onFinish();
   }
 
   @override
@@ -200,7 +197,7 @@ class _GameState extends State<_Game> {
             child: Text(
               task.value,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline2,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ),
           Row(
@@ -209,7 +206,7 @@ class _GameState extends State<_Game> {
               SizedBox(
                 height: 50.0,
                 child: ElevatedButton(
-                  child: const Text('DALŠÍ OTÁZKA'),
+                  child: const Text('Další úkol'),
                   style: ElevatedButton.styleFrom(primary: Colors.blue),
                   onPressed: () => setNextTask(),
                 ),

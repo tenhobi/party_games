@@ -34,8 +34,8 @@ class _WordsScreenState extends State<WordsScreen> {
                   initTime: time,
                   onStart: (int selectedTime) {
                     setState(() {
-                      playing = true;
                       time = selectedTime;
+                      playing = true;
                     });
                   },
                 )
@@ -44,8 +44,8 @@ class _WordsScreenState extends State<WordsScreen> {
                   time: time,
                   onFinish: (int score) async {
                     setState(() {
-                      playing = false;
                       lastScore = score;
+                      playing = false;
                     });
 
                     final player = AudioPlayer();
@@ -87,7 +87,7 @@ class __LobbyState extends State<_Lobby> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Hra Kufr', style: Theme.of(context).textTheme.headline2),
+          Text('Hra Kufr', style: Theme.of(context).textTheme.headline4),
           Padding(
             padding: const EdgeInsets.all(32.0),
             child: Row(
@@ -194,7 +194,7 @@ class _GameState extends State<_Game> {
                 width: 100.0,
                 height: 50.0,
                 child: ElevatedButton(
-                  child: const Text('špatně'),
+                  child: const Text('Špatně'),
                   style: ElevatedButton.styleFrom(primary: Colors.red),
                   onPressed: () => buttonClickedHandler(correct: false),
                 ),
@@ -207,7 +207,7 @@ class _GameState extends State<_Game> {
                 width: 100.0,
                 height: 50.0,
                 child: ElevatedButton(
-                  child: const Text('správně'),
+                  child: const Text('Správně'),
                   style: ElevatedButton.styleFrom(primary: Colors.blue),
                   onPressed: () => buttonClickedHandler(correct: true),
                 ),

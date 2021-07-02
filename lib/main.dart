@@ -83,9 +83,9 @@ class GameDetailsPage extends Page {
           case 1:
             return const WordsScreen();
           case 2:
-            return TasksScreen();
+            return const TasksScreen();
           case 3:
-            return TopicsScreen();
+            return const TopicsScreen();
           default:
             return const Text("Unknown game");
         }
@@ -109,15 +109,20 @@ class GamesListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Párty hry'),
+        centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          for (var game in games)
-            ListTile(
-              title: Text(game.title),
-              onTap: () => onTapped(game),
-            )
-        ],
+      body: Container(
+        alignment: Alignment.center,
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            for (var game in games)
+              ListTile(
+                title: Center(child: Text(game.title)),
+                onTap: () => onTapped(game),
+              )
+          ],
+        ),
       ),
     );
   }
