@@ -84,6 +84,43 @@
 - task: $ a $ si navzájem řeknou kompliment. Pokud ne, tak si dají dva loky.
 - task: $ udělá 10 dřepů. Pokud ano, tak může někomu rozdat 3 loky.
 - task: $ se poslepu dotkne nosu. Pokud se netrefí, dá si 2 loky.
+- task: $, jdi se vykoupat do sprchy, nepřevlékej se. Pokud se snad bojíš vody, piješ 3 loky.
+- task: $, polib tu osobu, která se ti nejvíc líbí. Pokud jeden z vás odmítne, oba 3x pijete.
+- task: $ a $ se na 30 sekund líbají. Pokud někdo odmítne, dopíjí drink toho druhého.
+- task: $, svlékni někomu jednu část oblečení dle tvého výběru. Pokud jeden z vás odmítne, oba 3x pijete.
+- task: $, řekni $ co si o něm/ní opravdu myslíš. Pokud jsi posera, dej si 2 loky.
+- task: $, nech $ ti popsat zadek permanentním fixem. Pokud se zdráháš, dej si 3 loky.
+- task: $, řekni nám, kdo z této skupiny na tebe měl v životě největší vliv. Pokud nechceš říct, dej si lok.
+- task: $, mluv chvíli sexuálně o $. Pokud odmítneš, piješ 2 loky.
+- task: $ si musí na 5 minut zavázat oči. Jinak dopíjí drink. Tak jak to vidíš? ;)
+- task: $, popiš nám svůj poslední sexuální zážitek. Pokud si na to netroufáš, piješ 3x.
+- task: $, chtěl/a bys jít na rande s $? Pokud neodpovíš, 3x piješ. A pokud nechceš, dej si lok, ty blbečku.
+- task: $, zavolej rodičům a řekni jim, že čekáš dítě. Jinak 3x piješ.
+- task: $, pošli $ rodičům selfie vás dvou a vymysli k tomu popisek. Jinak 2x pijete.
+- task: $, sdílej na sociální sítě fotku tebe a $. Pokud si netroufáte, pijete 4x.
+- task: "$, polib $ a $. Potom nám řekni, kdo líbá lépe. #forScience Jinak všichni pijete 3x."
+- task: $, udělej $ tetování (hennou; fixou; ...). Pokud někdo odmítne, pije 3x.
+- task: $ musí dát svůj telefon $. Ten/ta může napsat cokoli komukoli. Pokud nesouhlasíš, piješ 3x.
+- task: $ musí dát svůj telefon $. Ten/ta se může podívat na cokoli během 3 minut. Pokud jsi sralbotka, piješ 3x.
+- task: $ udělá $ "makeover" a udělá ji/ho tak ošklivého, jak jen to jde. Pokud odmítne, dá si dva loky.
+- task: $, ostříhej $ vlasy. Určitě ti poradí, jaký má vysněný střih. Pokud jeden z vás odmítne, oba si dejte dva loky.
+- task: $ a $ si dají kámen, nůžky, papír. Kdo prohraje, pije lok.
+- task: $, vyznej $ lásku. Pokud jsi posera, dej si 3 loky.
+- task: $ a $ si vymění oblečení. Pokud jsi sralbotka, piješ 4x.
+- task: $ a $, zavolejte kamarádovi/kamarádce a zeptejte se, jestli by s vámi měl/a trojku. Pokud se stydíte, oba pijete 2x.
+- task: $, $ a $, dejte si pod spodní prádlo led. Taky si každý dejte 2 loky za každého, který odmítne.
+- task: $ a $ předvedou své oblíbené sexuální pozice; každé v opačné roli. Pokud si na to netroufáte, oba si dejte dva loky.
+- task: $ a $ si dají páku. Slabší pije dvakrát.
+- task: $, svlékni si tričko a udělej nám show. Pokud jsi sráč, a ne hráč, piješ třikrát.
+- task: $, řekni něco v cizím jazyce. Za každého, kdo pozná jazyk, kterým mluvíš (každý pouze jeden pokus), si dej 1 lok.
+- task: $, nech si udělat zářez do obočí (eyebrow slit). Pokud jsi poseroutka, piješ čtyřikrát.
+- task: "$, zahraj si hru 'fuck, marry, kill'. Ostatní jsou tvoje možnosti. Jinak piješ třikrát."
+- task: $, běž vysílat živě na Facebook/Instagram a udělej karaoke na písničku dle výběru $. Jestli jsi sralbotka, radši dopij svůj drink.
+- task: $, dej napít $ tvého drinku, z tvých úst. Jinak oba pijete 2x.
+- task: První, kdo si svlékne tričko, rozdává 2 loky.
+- task: První, kdo krkne, rozdává 2 loky.
+- task: První dva lidé, kteří si dají pusu, rozdávají 4 loky.
+- task: První, kdo vypije sklenici vody, rozdává 3 loky.
 
 # Questions - OTÁZKA (Hráči se musí shodnout na jednom hráči, na kterého otázka nejvíce sedí.)
 - question: Kdo z hráčů je nejstřízlivější? Poloabstinent musí exnout zbytek svého pití.
@@ -228,4 +265,10 @@
 - carousel: MUSIC JAM. $ začne zpívat písničku. V jednu chvíli přestane a ukáže na hráče, který musí navázat dál. Takto pokračujte dokud se někdo nesplete. Kdo se splete, pije třikrát.
 - carousel: Postavy z Knihy džunglí. Kdo neví, pije dvakrát.
 - carousel: Španělské písničky. Kdo neví, pije.
-
+- carousel: Jazyky. $ začíná. Poražený se 2x napije.
+- carousel: Knihy. $ začíná. Poražený se 2x napije.
+- carousel: Ryby. $ začíná. Neznalec ryb se 2x napije.
+- carousel: Savci. $ začíná. Neznalec savců se 2x napije.
+- carousel: Ptáci. $ začíná. Neznalec ptáků se 2x napije.
+- carousel: Plazi. $ začíná. Neznalec plazů se 2x napije.
+- carousel: Obojživelníci. $ začíná. Neznalec obojživelníků se 2x napije.
